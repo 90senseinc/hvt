@@ -1,0 +1,1349 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horizonview Technologies | ICT Solutions Zimbabwe</title>
+    <meta name="description"
+        content="Horizonview Technologies delivers tailor-made ICT solutions, enterprise infrastructure, networking, and Promedic HMS—the leading healthcare management suite in Zimbabwe.">
+    <meta name="keywords"
+        content="ICT solutions Zimbabwe, Promedic HMS, healthcare management software Harare, enterprise infrastructure, IT support Zimbabwe, computer sales Harare">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.horizonview.co/">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.horizonview.co/">
+    <meta property="og:title" content="Horizonview Technologies | Innovative ICT Solutions">
+    <meta property="og:description"
+        content="Wholly Zimbabwean ICT partner providing robust enterprise networking, infrastructure, and the flagship Promedic Healthcare Management Suite.">
+    <meta property="og:image" content="https://www.horizonview.co/assets/img/og-preview.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://www.horizonview.co/">
+    <meta name="twitter:title" content="Horizonview Technologies | Innovative ICT Solutions">
+    <meta name="twitter:description"
+        content="Wholly Zimbabwean ICT partner providing robust enterprise networking, infrastructure, and the flagship Promedic Healthcare Management Suite.">
+    <meta name="twitter:image" content="https://www.horizonview.co/assets/img/og-preview.jpg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        /* =========================================
+           Global Reset & Design Variables
+           ========================================= */
+        :root {
+            /* Premium Gradients */
+            --blue-gradient: linear-gradient(135deg, #002375 0%, #0046c7 100%);
+            --dark-gradient: linear-gradient(135deg, rgba(0, 23, 75, 0.95) 0%, rgba(0, 50, 150, 0.85) 100%);
+
+            /* Solid Corporate Brand Colors */
+            --primary-blue: #0033a0;
+            --accent-blue: #0056b3;
+            --brand-red: #da251d;
+            --brand-yellow: #fdb913;
+
+            --text-dark: #1e293b;
+            --text-light: #64748b;
+            --bg-light: #f8fafc;
+            --white: #ffffff;
+            --font-main: 'Poppins', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-main);
+            color: var(--text-dark);
+            line-height: 1.6;
+            background-color: var(--white);
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        /* =========================================
+           Header & Dynamic Navigation
+           ========================================= */
+        header {
+            background: transparent;
+            padding: 25px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-container img {
+            height: 75px;
+            border-radius: 50%;
+            background: var(--white);
+            padding: 2px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo-text h1 {
+            font-size: 1.5rem;
+            color: var(--white);
+            /* Changed back to White */
+            line-height: 1.2;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            transition: color 0.3s;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+        }
+
+        .logo-text span {
+            font-size: 0.85rem;
+            color: var(--white);
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            color: var(--white);
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            padding-bottom: 6px;
+            border-bottom: 2px solid transparent;
+            transition: all 0.3s;
+        }
+
+        nav a:hover,
+        nav a.active {
+            color: var(--brand-yellow);
+            border-bottom: 2px solid var(--brand-yellow);
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 1.8rem;
+            color: var(--white);
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        /* JavaScript Scroll State Transition Styles */
+        header.scrolled {
+            background: var(--white);
+            padding: 15px 0;
+            box-shadow: 0 4px 25px rgba(0, 0, 0, 0.08);
+        }
+
+        header.scrolled .logo-text h1 {
+            color: var(--primary-blue);
+            text-shadow: none;
+        }
+
+        header.scrolled .logo-text span {
+            color: var(--brand-red);
+        }
+
+        header.scrolled nav a {
+            color: var(--text-dark);
+        }
+
+        header.scrolled nav a:hover,
+        header.scrolled nav a.active {
+            color: var(--brand-red);
+            border-bottom: 2px solid var(--brand-red);
+        }
+
+        header.scrolled .menu-toggle {
+            color: var(--primary-blue);
+        }
+
+        /* =========================================
+           Hero Branding Section
+           ========================================= */
+        .hero {
+            background: var(--dark-gradient), url('assets/img/hero-bg.jpg') no-repeat center center/cover;
+            min-height: 95vh;
+            display: flex;
+            align-items: center;
+            color: var(--white);
+            padding-top: 100px;
+        }
+
+        .hero h2 {
+            font-size: 5rem;
+            line-height: 1.05;
+            margin-bottom: 15px;
+            max-width: 900px;
+            font-weight: 800;
+            color: var(--white);
+            /* Changed back to White */
+            text-transform: uppercase;
+        }
+
+        .hero h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            font-weight: 500;
+            color: var(--brand-yellow);
+            /* Shifted Yellow highlight here for contrast */
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin-bottom: 35px;
+            opacity: 0.95;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--brand-red);
+            color: var(--white);
+            padding: 16px 40px;
+            border-radius: 30px;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 15px rgba(218, 37, 29, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background: #b71c1c;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(218, 37, 29, 0.5);
+            color: var(--white);
+        }
+
+        /* =========================================
+           About Corporate Segment
+           ========================================= */
+        .about {
+            padding: 100px 0;
+            background: var(--bg-light);
+        }
+
+        .section-title {
+            color: var(--primary-blue);
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            font-weight: 800;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 4px;
+            background: var(--brand-red);
+            bottom: -10px;
+            left: 0;
+        }
+
+        .text-center .section-title::after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: start;
+        }
+
+        .about-text p {
+            margin-bottom: 22px;
+            color: var(--text-light);
+            font-size: 1rem;
+            text-align: justify;
+        }
+
+        .highlight-red {
+            color: var(--brand-red);
+            font-weight: 700;
+            font-size: 1.05rem;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            border-bottom: 5px solid var(--brand-yellow);
+        }
+
+        .core-values {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .value-card {
+            background: var(--white);
+            padding: 25px 15px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.03);
+            border-top: 3px solid var(--primary-blue);
+            transition: transform 0.3s;
+        }
+
+        .value-card:hover {
+            transform: translateY(-5px);
+            border-top-color: var(--brand-red);
+        }
+
+        .value-card h4 {
+            color: var(--primary-blue);
+            margin: 15px 0 10px;
+            font-size: 0.95rem;
+            font-weight: 700;
+        }
+
+        .value-card p {
+            font-size: 0.8rem;
+            color: var(--text-light);
+        }
+
+        /* =========================================
+           Products & Services Catalogue Layout
+           ========================================= */
+        .products {
+            padding: 100px 0;
+            background: var(--white);
+        }
+
+        .products-layout {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        /* Shared Card Styles */
+        .product-card {
+            background: var(--bg-light);
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            border: 1px solid #e2e8f0;
+            position: relative;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            background: var(--white);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+            border-color: var(--brand-yellow);
+        }
+
+        /* Flagship Full Width Layout */
+        .product-card.flagship-full {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            text-align: left;
+            padding: 40px;
+            border: 2px solid var(--brand-red);
+            box-shadow: 0 10px 25px rgba(218, 37, 29, 0.1);
+            overflow: hidden;
+        }
+
+        .flagship-badge {
+            position: absolute;
+            top: 25px;
+            right: -35px;
+            background: var(--brand-red);
+            color: var(--white);
+            padding: 5px 40px;
+            transform: rotate(45deg);
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            z-index: 10;
+        }
+
+        .flagship-full img {
+            width: 45%;
+            height: auto;
+            max-height: 380px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .flagship-content {
+            width: 55%;
+        }
+
+        .flagship-content h4 {
+            font-size: 2rem;
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+            font-weight: 800;
+        }
+
+        .flagship-content p {
+            font-size: 1rem;
+            color: var(--text-light);
+            margin-bottom: 15px;
+            line-height: 1.7;
+        }
+
+        .flagship-content p strong {
+            color: var(--text-dark);
+        }
+
+        /* Remaining 5 Products Row */
+        .five-col-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 20px;
+        }
+
+        .five-col-grid .product-card {
+            padding: 25px 15px;
+            text-align: center;
+        }
+
+        .five-col-grid .product-card img {
+            width: 100%;
+            height: 130px;
+            object-fit: cover;
+            border-radius: 6px;
+            margin-bottom: 15px;
+        }
+
+        .five-col-grid .product-card h4 {
+            font-size: 0.95rem;
+            color: var(--primary-blue);
+            margin-bottom: 10px;
+            min-height: 55px;
+            /* Ensures alignment if titles are long */
+            font-weight: 700;
+        }
+
+        .five-col-grid .product-card p {
+            font-size: 0.8rem;
+            color: var(--text-light);
+        }
+
+        /* =========================================
+           Testimonials Section
+           ========================================= */
+        .testimonials {
+            padding: 100px 0;
+            background: var(--bg-light);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .testimonial-card {
+            background: var(--white);
+            padding: 40px 30px;
+            border-radius: 12px;
+            border-left: 4px solid var(--brand-yellow);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+            position: relative;
+            transition: transform 0.3s;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .quote-icon {
+            color: rgba(218, 37, 29, 0.15);
+            font-size: 2.5rem;
+            position: absolute;
+            top: 20px;
+            right: 30px;
+        }
+
+        .testimonial-card p {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            font-style: italic;
+            margin-bottom: 25px;
+            line-height: 1.7;
+            position: relative;
+            z-index: 2;
+        }
+
+        .client-meta h5 {
+            color: var(--primary-blue);
+            font-size: 1.05rem;
+            font-weight: 700;
+        }
+
+        .client-meta span {
+            font-size: 0.85rem;
+            color: var(--brand-red);
+            font-weight: 600;
+        }
+
+        /* =========================================
+           FAQ Section
+           ========================================= */
+        .faq-section {
+            padding: 100px 0;
+            background: var(--white);
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 50px auto 0;
+        }
+
+        details {
+            background: var(--bg-light);
+            margin-bottom: 15px;
+            border-radius: 8px;
+            border-left: 4px solid var(--brand-yellow);
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+
+        details[open] {
+            border-left: 4px solid var(--brand-red);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        summary {
+            padding: 20px;
+            font-weight: 600;
+            cursor: pointer;
+            color: var(--primary-blue);
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        summary::-webkit-details-marker {
+            display: none;
+        }
+
+        summary:after {
+            content: '\f067';
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            color: var(--brand-red);
+            transition: transform 0.3s;
+        }
+
+        details[open] summary:after {
+            content: '\f068';
+            transform: rotate(180deg);
+        }
+
+        details p {
+            padding: 0 20px 20px;
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* =========================================
+           Promedic-Style Contact Area
+           ========================================= */
+        .contact-area {
+            padding: 100px 0;
+            background: var(--bg-light);
+        }
+
+        .contact-info-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin: 50px 0;
+        }
+
+        .contact-item-box {
+            display: flex;
+            align-items: center;
+            background: var(--white);
+            padding: 30px 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
+            border-bottom: 3px solid var(--primary-blue);
+            transition: all 0.3s;
+        }
+
+        .contact-item-box:hover {
+            transform: translateY(-5px);
+            border-bottom-color: var(--brand-red);
+        }
+
+        .contact-icon-box {
+            background: var(--primary-blue);
+            color: var(--white);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-right: 20px;
+            flex-shrink: 0;
+            transition: background 0.3s;
+        }
+
+        .contact-item-box:hover .contact-icon-box {
+            background: var(--brand-red);
+        }
+
+        .contact-text-box h4 {
+            color: var(--text-dark);
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+            font-weight: 700;
+        }
+
+        .contact-text-box p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .contact-form-container {
+            background: var(--white);
+            padding: 50px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            border-top: 4px solid var(--brand-yellow);
+        }
+
+        .contact-form-container h4 {
+            font-size: 1.8rem;
+            color: var(--primary-blue);
+            margin-bottom: 30px;
+            font-weight: 700;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin-bottom: 25px;
+        }
+
+        .form-group.full {
+            grid-column: 1 / -1;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 16px;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            font-family: var(--font-main);
+            font-size: 0.95rem;
+            background: var(--bg-light);
+            transition: all 0.3s;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary-blue);
+            background: var(--white);
+            box-shadow: 0 0 0 3px rgba(0, 51, 160, 0.1);
+        }
+
+        textarea.form-control {
+            height: 160px;
+            resize: vertical;
+        }
+
+        .btn-submit {
+            background: var(--primary-blue);
+            color: var(--white);
+            border: none;
+            padding: 16px 40px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 700;
+            text-transform: uppercase;
+            transition: background 0.3s;
+            letter-spacing: 1px;
+            font-size: 0.95rem;
+        }
+
+        .btn-submit:hover {
+            background: var(--brand-red);
+        }
+
+        /* =========================================
+           Footer Banner Metrics
+           ========================================= */
+        .footer-banner {
+            background: var(--blue-gradient);
+            color: var(--white);
+            padding: 50px 0;
+        }
+
+        .banner-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+        }
+
+        .banner-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .banner-item i {
+            color: var(--brand-yellow);
+        }
+
+        .banner-item h4 {
+            font-size: 1.25rem;
+            margin-bottom: 3px;
+            font-weight: 700;
+        }
+
+        .banner-item p {
+            font-size: 0.85rem;
+            opacity: 0.9;
+        }
+
+        /* =========================================
+           Responsive Layout Media Breakpoints
+           ========================================= */
+        @media (max-width: 1200px) {
+            .five-col-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 992px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .product-card.flagship-full {
+                flex-direction: column;
+                text-align: center;
+                padding: 30px;
+            }
+
+            .flagship-full img {
+                width: 100%;
+            }
+
+            .flagship-content {
+                width: 100%;
+            }
+
+            .five-col-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-info-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .banner-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 40px;
+            }
+
+            .hero h2 {
+                font-size: 4rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                background: var(--primary-blue);
+                padding: 15px 0;
+            }
+
+            .nav-wrapper {
+                flex-direction: row;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            nav {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: var(--white);
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+                padding: 10px 0;
+                border-top: 1px solid #f1f5f9;
+                animation: slideDown 0.3s ease forwards;
+            }
+
+            nav.active {
+                display: block;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 0;
+            }
+
+            nav a {
+                color: var(--text-dark) !important;
+                display: block;
+                padding: 15px 20px;
+                border-bottom: 1px solid #f8fafc;
+                border-left: 4px solid transparent;
+            }
+
+            nav a:hover,
+            nav a.active {
+                background: var(--bg-light);
+                color: var(--brand-red) !important;
+                border-bottom: 1px solid #f8fafc !important;
+                border-left: 4px solid var(--brand-red) !important;
+                padding-bottom: 15px !important;
+            }
+
+            .hero {
+                text-align: center;
+                min-height: auto;
+                padding: 150px 0 85px 0;
+            }
+
+            .hero h2 {
+                font-size: 3rem;
+            }
+
+            .hero h3 {
+                font-size: 1.3rem;
+            }
+
+            .hero p {
+                margin: 0 auto 30px auto;
+            }
+
+            .core-values {
+                grid-template-columns: 1fr;
+            }
+
+            .five-col-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-form-container {
+                padding: 30px 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo-container img {
+                height: 50px;
+            }
+
+            .logo-text h1 {
+                font-size: 1.1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .banner-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .banner-item {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        /* Animations */
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <div class="logo-container">
+                <img src="assets/img/hvt-logo.png" alt="Horizonview Logo">
+                <div class="logo-text">
+                    <h1>HORIZONVIEW<br>TECHNOLOGIES</h1>
+                    <span>(PVT) LTD</span>
+                </div>
+            </div>
+
+            <div class="menu-toggle" id="mobile-menu">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="#home" class="active">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#products">Services</a></li>
+                    <li><a href="#testimonials">Clients</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="container">
+            <h2>BEYOND THE HORIZON</h2>
+            <h3>Innovative ICT Solutions.<br>Tailored for Your Success.</h3>
+            <p>A wholly Zimbabwean company delivering best-fit, tailor-made ICT solutions that empower your business to
+                grow, compete and lead.</p>
+            <a href="#about" class="btn">Discover More &rarr;</a>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-text">
+                    <h3 class="section-title">About Us</h3>
+                    <p>A vibrant and dynamic wholly Zimbabwean company, Horizonview Technologies (Pvt) Ltd as the name
+                        connotes, entered the ICT market space with a vision and promise beyond what the naked eye can
+                        behold - a journey to the Horizon and beyond.</p>
+                    <p>With none of the standard rhetoric and often over-used statements of being the biggest and best
+                        players in the ICT field that most established players claim, Horizonview Technologies derives
+                        its energy and motivation from the drive to offer best-fit tailor-made ICT Solutions to its
+                        chosen market segment.</p>
+
+                    <p>We take pride in building structural, dependable ecosystems. Horizonview Technologies is the
+                        proud developer of <span class="highlight-red">Promedic HMS</span>, a comprehensive Healthcare
+                        Management Suite that has revolutionized clinic and hospital administration across the region.
+                    </p>
+
+                    <p>Thus the focus at Horizonview Technologies is not on self aggrandisement but instead lies within
+                        the fulfilment of its customers' specific expectations and requirements.</p>
+                    <a href="#products" class="btn" style="margin-top: 15px;">Explore Services &rarr;</a>
+                </div>
+                <div class="about-image">
+                    <img src="assets/img/about-globe.jpg" alt="Global Network">
+                    <div class="core-values">
+                        <div class="value-card">
+                            <i class="fa-solid fa-bullseye fa-2x" style="color: var(--brand-red);"></i>
+                            <h4>OUR VISION</h4>
+                            <p>To be a trusted ICT partner delivering excellence beyond expectations.</p>
+                        </div>
+                        <div class="value-card">
+                            <i class="fa-solid fa-rocket fa-2x" style="color: var(--brand-yellow);"></i>
+                            <h4>OUR MISSION</h4>
+                            <p>To provide innovative, reliable and scalable ICT solutions.</p>
+                        </div>
+                        <div class="value-card">
+                            <i class="fa-solid fa-handshake fa-2x" style="color: var(--primary-blue);"></i>
+                            <h4>OUR VALUES</h4>
+                            <p>Integrity. Innovation. Customer Focus. Excellence.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="products" id="products">
+        <div class="container">
+            <h3 class="section-title text-center">Our Products & Services</h3>
+
+            <div class="products-layout">
+                <div class="product-card flagship-full">
+                    <div class="flagship-badge">FLAGSHIP</div>
+                    <img src="assets/img/prod1.png" alt="Promedic HMS Interface">
+                    <div class="flagship-content">
+                        <h4>1. PROMEDIC HMS</h4>
+                        <p><strong>The Ultimate Healthcare Management Suite</strong></p>
+                        <p>Designed to handle the structural and operational complexities of the modern healthcare
+                            sector. Promedic HMS provides a robust and reliable solution for Hospitals, Clinics,
+                            Dentists, and Pharmacies ensuring seamless service continuity.</p>
+                        <p>By streamlining electronic medical records, patient queuing, billing, and pharmacy inventory
+                            into a single cohesive ecosystem, we guarantee data integrity and accountability across
+                            every department.</p>
+                    </div>
+                </div>
+
+                <div class="five-col-grid">
+                    <div class="product-card">
+                        <img src="assets/img/prod2.jpg" alt="Enterprise Infrastructure">
+                        <h4>2. ENTERPRISE INFRASTRUCTURE</h4>
+                        <p>Data centres, Cloud computing, servers and storage deployments</p>
+                    </div>
+                    <div class="product-card">
+                        <img src="assets/img/prod3.jpg" alt="End-User Computing">
+                        <h4>3. END-USER COMPUTING</h4>
+                        <p>Desktops, Laptops, Printers, Projectors and standard Accessories</p>
+                    </div>
+                    <div class="product-card">
+                        <img src="assets/img/prod4.jpg" alt="Mobile Technologies">
+                        <h4>4. MOBILE & CELLULAR</h4>
+                        <p>Palmtops, iPads, Tablets, iPhones and rugged smart devices</p>
+                    </div>
+                    <div class="product-card">
+                        <img src="assets/img/prod5.jpg" alt="Enterprise Networks">
+                        <h4>5. ENTERPRISE NETWORKS</h4>
+                        <p>Routers, Switches, Cabinets, Cabling and network Accessories</p>
+                    </div>
+                    <div class="product-card">
+                        <img src="assets/img/prod6.jpg" alt="Software Sales">
+                        <h4>6. SOFTWARE SALES</h4>
+                        <p>MS Windows OS, MS Office Suite, Quickbooks, Peachtree etc.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <h3 class="section-title text-center">Trusted By Industry Leaders</h3>
+            <div class="testimonials-grid">
+
+                <div class="testimonial-card">
+                    <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
+                    <p>"[Placeholder Text for First Mutual: Pending content detailing how Horizonview provided scalable,
+                        offline-first structures or reliable hardware.]"</p>
+                    <div class="client-meta">
+                        <h5>First Mutual</h5>
+                        <span>Client Partner</span>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
+                    <p>"[Placeholder Text for Omnipath: Pending content detailing how Horizonview solved specific
+                        infrastructure constraints efficiently.]"</p>
+                    <div class="client-meta">
+                        <h5>Omnipath</h5>
+                        <span>Client Partner</span>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
+                    <p>"[Placeholder Text for WWF: Pending content detailing the implementation of NGO-focused
+                        multi-branch systems or hardware networking.]"</p>
+                    <div class="client-meta">
+                        <h5>WWF (World Wildlife Fund)</h5>
+                        <span>Client Partner</span>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
+                    <p>"[Placeholder Text for Client 4: Awaiting final advised client name and specific testimonial
+                        paragraph regarding ICT delivery.]"</p>
+                    <div class="client-meta">
+                        <h5>[4th Client TBD]</h5>
+                        <span>Client Partner</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="faq-section" id="faq">
+        <div class="container">
+            <h3 class="section-title text-center">Frequently Asked Questions</h3>
+            <div class="faq-container">
+                <details>
+                    <summary>What services does Horizonview Technologies offer?</summary>
+                    <p>[Placeholder Answer] We provide comprehensive ICT solutions including our flagship Promedic HMS
+                        software, enterprise infrastructure design, end-user computing hardware, and mobile technology
+                        deployments tailored for multi-branch retail and NGO environments.</p>
+                </details>
+                <details>
+                    <summary>What is the Promedic Healthcare Management Suite?</summary>
+                    <p>[Placeholder Answer] Promedic HMS is our in-house developed software designed specifically to
+                        manage workflows for hospitals, clinics, and pharmacies, ensuring robust data integrity and
+                        offline reliability.</p>
+                </details>
+                <details>
+                    <summary>Do you provide hardware procurement and installation?</summary>
+                    <p>[Placeholder Answer] Yes, we supply leading brands for servers, networking switches, laptops, and
+                        peripherals, followed by complete configuration and installation services.</p>
+                </details>
+                <details>
+                    <summary>Do you offer post-installation technical support?</summary>
+                    <p>[Placeholder Answer] Absolutely. We pride ourselves on ownership and accountability, meaning our
+                        relationship continues well beyond the initial deployment with dedicated maintenance SLAs.</p>
+                </details>
+                <details>
+                    <summary>How can my organization request a custom quote?</summary>
+                    <p>[Placeholder Answer] You can reach out via the contact form below or call our sales line
+                        directly. We assess your real-world constraints and provide a tailored proposal.</p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-area" id="contact">
+        <div class="container">
+            <h3 class="section-title text-center">Get In Touch</h3>
+
+            <div class="contact-info-grid">
+                <div class="contact-item-box">
+                    <div class="contact-icon-box">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div>
+                    <div class="contact-text-box">
+                        <h4>Address</h4>
+                        <p>10 Lanark Road,<br>Avondale,<br>Harare</p>
+                    </div>
+                </div>
+
+                <div class="contact-item-box">
+                    <div class="contact-icon-box">
+                        <i class="fa-solid fa-mobile-phone"></i>
+                    </div>
+                    <div class="contact-text-box">
+                        <h4>Phone Number</h4>
+                        <p>0772 319 013<br>0717 619 013<br>0783 266 673</p>
+                    </div>
+                </div>
+
+                <div class="contact-item-box">
+                    <div class="contact-icon-box">
+                        <i class="fa-regular fa-envelope"></i>
+                    </div>
+                    <div class="contact-text-box">
+                        <h4>Email Address</h4>
+                        <p>info@horizonview.co<br>sales@horizonview.co</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-form-container">
+                <h4>Send Us a Message</h4>
+                <form action="#" method="post">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Phone Number" name="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Email Address" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Subject" name="subject" required>
+                        </div>
+                        <div class="form-group full">
+                            <textarea class="form-control" placeholder="Your Message..." name="message"
+                                required></textarea>
+                        </div>
+                        <div class="form-group full">
+                            <button type="submit" class="btn-submit">Submit Inquiry</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer-banner">
+        <div class="container banner-grid">
+            <div class="banner-item">
+                <i class="fa-solid fa-users fa-2x"></i>
+                <div>
+                    <h4>100%</h4>
+                    <p>Wholly Zimbabwean Company</p>
+                </div>
+            </div>
+            <div class="banner-item">
+                <i class="fa-solid fa-shield-halved fa-2x"></i>
+                <div>
+                    <h4>Customer Focused</h4>
+                    <p>Your Success Is Our Priority</p>
+                </div>
+            </div>
+            <div class="banner-item">
+                <i class="fa-solid fa-lightbulb fa-2x"></i>
+                <div>
+                    <h4>Innovative Solutions</h4>
+                    <p>Technology That Drives Growth</p>
+                </div>
+            </div>
+            <div class="banner-item">
+                <i class="fa-solid fa-headset fa-2x"></i>
+                <div>
+                    <h4>Reliable Support</h4>
+                    <p>Always Here When You Need Us</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const header = document.querySelector('header');
+        const mobileMenuBtn = document.getElementById('mobile-menu');
+        const navMenu = document.querySelector('nav');
+        const menuIcon = mobileMenuBtn.querySelector('i');
+        const navLinks = document.querySelectorAll('nav a');
+
+        window.addEventListener('scroll', function () {
+            if (!navMenu.classList.contains('active')) {
+                if (window.scrollY > 50) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            }
+        });
+
+        mobileMenuBtn.addEventListener('click', function () {
+            navMenu.classList.toggle('active');
+
+            if (navMenu.classList.contains('active')) {
+                menuIcon.classList.remove('fa-bars');
+                menuIcon.classList.add('fa-xmark');
+                header.classList.add('scrolled');
+            } else {
+                menuIcon.classList.remove('fa-xmark');
+                menuIcon.classList.add('fa-bars');
+                if (window.scrollY <= 50) {
+                    header.classList.remove('scrolled');
+                }
+            }
+        });
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.forEach(navItem => navItem.classList.remove('active'));
+                link.classList.add('active');
+
+                if (navMenu.classList.contains('active')) {
+                    navMenu.classList.remove('active');
+                    menuIcon.classList.remove('fa-xmark');
+                    menuIcon.classList.add('fa-bars');
+                    if (window.scrollY <= 50) {
+                        header.classList.remove('scrolled');
+                    }
+                }
+            });
+        });
+    </script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Corporation",
+  "name": "Horizonview Technologies (Pvt) Ltd",
+  "alternateName": "Horizonview Technologies",
+  "url": "https://www.horizonview.co/",
+  "logo": "https://www.horizonview.co/assets/img/hvt-logo.png",
+  "description": "A vibrant and dynamic wholly Zimbabwean company offering best-fit, tailor-made ICT Solutions and the flagship Promedic Healthcare Management Suite.",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "10 Lanark Road, Avondale",
+    "addressLocality": "Harare",
+    "addressRegion": "Harare Province",
+    "addressCountry": "ZW"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+263-772-319-013",
+    "contactType": "sales",
+    "availableLanguage": "en"
+  },
+  "sameAs": [
+    "https://www.linkedin.com/company/horizonview-technologies"
+  ],
+  "knowsAbout": [
+    "Healthcare Management Software",
+    "Enterprise Infrastructure",
+    "Cloud Computing",
+    "Enterprise Networks",
+    "End-User Computing"
+  ]
+}
+</script>
+</body>
+
+</html>
